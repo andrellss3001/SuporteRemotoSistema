@@ -4,7 +4,7 @@ Aplicativo de suporte técnico remoto baseado no **RustDesk 1.5.1** (AGPL-3.0), 
 nome próprio, interface simplificada em português, tema escuro, executável portátil `SuporteRemotoSistema.exe`
 e aprovação reforçada (**senha temporária E aceite do cliente**).
 
-> **Status (08/11/2026):**
+> **Status (09/11/2026):**
 > - **Compilado:** `dist\SuporteRemotoSistema.exe` (24,1 MB) foi gerado nesta máquina com `scripts\02-compilar.ps1`
 >   a partir de `C:\src\DeskATOS`. Verificado: `--version` = 1.5.1, propriedades do arquivo "SuporteRemotoSistema",
 >   módulo de personalização presente no `librustdesk.dll`, tela "SUPORTE REMOTO SISTEMA" presente no `app.so`,
@@ -18,8 +18,9 @@ e aprovação reforçada (**senha temporária E aceite do cliente**).
 > - **Etapa 2 (RustDesk original) não executada** nesta máquina.
 > - **Sem ícone próprio.**
 > - **Código-fonte publicado** em https://github.com/andrellss3001/SuporteRemotoSistema (09/11/2026), e
->   `kSuporteRemotoSourceUrl` aponta para ele. O `dist\SuporteRemotoSistema.exe` atual (SHA-256 `0DBC1D93…`) foi
->   compilado **antes** dessa mudança e ainda mostra o endereço de exemplo no rodapé: recompile antes de distribuir.
+>   `kSuporteRemotoSourceUrl` aponta para ele. Recompilado em seguida: `dist\SuporteRemotoSistema.exe`
+>   (SHA-256 `D5520F00…`, sem assinatura digital) mostra esse link no rodapé (conferido na tela, status "Pronto").
+>   O build anterior, com o endereço de exemplo, ficou em `dist\anterior\SuporteRemotoSistema-link-exemplo.exe`.
 
 ---
 
