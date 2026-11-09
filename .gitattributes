@@ -1,0 +1,7 @@
+* text=auto
+*.ps1 text eol=crlf
+*.sh text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+# O patch contém linhas CRLF (Runner.rc): precisa ficar byte a byte.
+*.patch -text

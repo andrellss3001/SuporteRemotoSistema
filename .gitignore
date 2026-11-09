@@ -1,0 +1,11 @@
+# Clone do RustDesk 1.5.1 (4+ GB com o build). As alterações estão em patches/.
+/rustdesk/
+# Executáveis e pastas geradas pelo 02-compilar.ps1
+/dist/
+# Nunca versionar chaves nem certificados
+*.pfx
+*.p12
+*.key
+*.pem
+id_ed25519
+servidor/data/

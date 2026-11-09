@@ -1,0 +1,37 @@
+# Servidor próprio RustDesk OSS (gratuito, AGPL-3.0) para o Suporte Remoto.
+# Baseado no arquivo oficial https://rustdesk.com/oss.yml
+#
+# Requisitos: Linux com Docker, IP público ou DNS fixo e as portas abaixo liberadas
+# no firewall/nuvem (apenas no SERVIDOR; os clientes não precisam abrir portas):
+#   TCP 21115 (hbbs - teste de NAT)
+#   TCP 21116 + UDP 21116 (hbbs - registro de ID e hole punching)
+#   TCP 21117 (hbbr - relay)
+#   21114 (API) é só do Server Pro (pago) - não é necessária.
+#   21118/21119 (WebSocket/cliente web) - não são necessárias na V1; mantenha fechadas.
+#
+# Uso:
+#   docker compose up -d
+#   cat ./data/id_ed25519.pub     # chave pública -> parâmetro -Key do 02-compilar.ps1
+#
+# Recomendado: troque "latest" por uma versão fixa (ex.: 1.1.16, a tag mais recente
+# do repositório rustdesk/rustdesk-server em 08/11/2026), após confirmar no Docker Hub.
+services:
+  hbbs:
+    container_name: hbbs
+    image: rustdesk/rustdesk-server:latest
+    command: hbbs
+    volumes:
+      - ./data:/root
+    network_mode: "host"
+    depends_on:
+      - hbbr
+    restart: unless-stopped
+
+  hbbr:
+    container_name: hbbr
+    image: rustdesk/rustdesk-server:latest
+    command: hbbr
+    volumes:
+      - ./data:/root
+    network_mode: "host"
+    restart: unless-stopped
