@@ -16,7 +16,10 @@ e aprovação reforçada (**senha temporária E aceite do cliente**).
 > - **Não testado entre dois computadores** (Etapa 5): conexão, aceite, controle e transferência de arquivos
 >   ainda precisam ser verificados.
 > - **Etapa 2 (RustDesk original) não executada** nesta máquina.
-> - **Sem ícone próprio** e `kSuporteRemotoSourceUrl` ainda com o endereço de exemplo.
+> - **Sem ícone próprio.**
+> - **Código-fonte publicado** em https://github.com/andrellss3001/SuporteRemotoSistema (09/11/2026), e
+>   `kSuporteRemotoSourceUrl` aponta para ele. O `dist\SuporteRemotoSistema.exe` atual (SHA-256 `0DBC1D93…`) foi
+>   compilado **antes** dessa mudança e ainda mostra o endereço de exemplo no rodapé: recompile antes de distribuir.
 
 ---
 
@@ -215,8 +218,8 @@ SUPORTE REMOTO SISTEMA
 ```
 
 Durante um atendimento aparece uma faixa vermelha "ATENDIMENTO REMOTO EM ANDAMENTO".
-No rodapé: "Baseado no RustDesk (AGPL-3.0). Código-fonte: …" — **edite `kSuporteRemotoSourceUrl`**
-em `suporte_remoto_home.dart` com o endereço do seu repositório antes de distribuir.
+No rodapé: "Baseado no RustDesk (AGPL-3.0). Código-fonte: https://github.com/andrellss3001/SuporteRemotoSistema"
+(constante `kSuporteRemotoSourceUrl` em `suporte_remoto_home.dart`; se o repositório mudar, altere ali).
 
 O que **não** foi reescrito (usa a interface original do RustDesk, já traduzida para PT-BR):
 
@@ -366,7 +369,8 @@ Logs para diagnóstico: `%APPDATA%\SuporteRemotoSistema\log\`.
    Depois de publicar cada versão, envie o executável para análise da Microsoft
    (https://www.microsoft.com/wdsi/filesubmission, opção "Software developer") para acelerar a reputação, e
    evite recompilar sem necessidade: cada build é um arquivo novo.
-2. **Publique o código-fonte** (obrigação da AGPL — seção 10) e ajuste `kSuporteRemotoSourceUrl`.
+2. **Publique o código-fonte da versão distribuída** (obrigação da AGPL — seção 10): faça o commit, envie
+   (`git push`) e marque a versão com uma tag, ex.: `git tag v1.0.0; git push origin v1.0.0`.
 3. Distribua por um link HTTPS seu e informe o SHA-256 aos clientes.
 4. Registre a versão: "Suporte Remoto V1 — baseado no RustDesk 1.5.1 (commit 23e5bb4)".
 
@@ -428,9 +432,9 @@ catálogo de endereços centralizado, logs de auditoria, gerador de cliente pers
 O RustDesk é licenciado sob **AGPL-3.0** (`rustdesk/LICENCE`). Ao distribuir o `SuporteRemotoSistema.exe`:
 
 1. **Código-fonte correspondente:** quem recebe o executável tem direito ao código-fonte completo **da
-   versão distribuída**, incluindo suas modificações e scripts de build. Forma simples: publique este projeto
-   (pasta `rustdesk/` modificada ou clone + patch, e `scripts/`) em um repositório público e informe o link no
-   aplicativo (rodapé) e na página de download.
+   versão distribuída**, incluindo suas modificações e scripts de build. Este projeto (patch + `scripts/`)
+   está publicado em https://github.com/andrellss3001/SuporteRemotoSistema, link mostrado no rodapé do
+   aplicativo. Mantenha o repositório público e atualizado a cada versão distribuída.
 2. **Mesma licença:** a obra derivada também é AGPL-3.0. Você não pode adicionar restrições (ex.: proibir
    engenharia reversa) para quem recebe o programa.
 3. **Avisos:** não remova avisos de copyright/licença existentes. Os arquivos novos marcam que são

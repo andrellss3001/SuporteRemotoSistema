@@ -22,10 +22,10 @@ index 1c7ae3d..6800edf 100644
          child: Row(
 diff --git a/flutter/lib/desktop/pages/suporte_remoto_home.dart b/flutter/lib/desktop/pages/suporte_remoto_home.dart
 new file mode 100644
-index 0000000..b636d2c
+index 0000000..5694c89
 --- /dev/null
 +++ b/flutter/lib/desktop/pages/suporte_remoto_home.dart
-@@ -0,0 +1,337 @@
+@@ -0,0 +1,336 @@
 +// Tela inicial simplificada do "Suporte Remoto" (V1, Windows).
 +//
 +// Modificação do RustDesk (https://github.com/rustdesk/rustdesk), licença AGPL-3.0.
@@ -46,9 +46,8 @@ index 0000000..b636d2c
 +const bool kSuporteRemoto = true;
 +
 +/// URL pública do código-fonte modificado (obrigação da AGPL-3.0 ao distribuir).
-+/// Altere para o endereço do SEU repositório antes de distribuir.
 +const String kSuporteRemotoSourceUrl =
-+    'https://github.com/SEU-USUARIO/suporte-remoto';
++    'https://github.com/andrellss3001/SuporteRemotoSistema';
 +
 +class SuporteRemotoHome extends StatefulWidget {
 +  const SuporteRemotoHome({Key? key}) : super(key: key);
